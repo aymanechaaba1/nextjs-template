@@ -6,5 +6,7 @@ import type { NextAuthConfig } from 'next-auth';
 
 export default {
   providers: [Google, Facebook, Twitter, GitHub],
-  pages: {},
+  pages: {
+    signIn: '/auth/login',
+  },
 } satisfies NextAuthConfig;
