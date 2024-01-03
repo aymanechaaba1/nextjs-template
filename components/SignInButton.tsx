@@ -13,7 +13,6 @@ function SignInButton({ provider }: { provider: Provider }) {
             redirectTo: '/',
           });
         }}
-        key={provider.id}
         className="border rounded-lg py-2 px-4 text-center"
       >
         Sign in with {provider.name}
