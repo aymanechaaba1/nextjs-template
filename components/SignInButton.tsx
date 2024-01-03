@@ -1,9 +1,9 @@
 import { getFetchUrl } from '@/lib/utils';
 import { Button } from './ui/button';
 import { signIn } from '@/lib/auth';
+import { CommonProviderOptions } from 'next-auth/providers';
 
-function SignInButton({ provider }: { provider: Provider }) {
-  console.log(process.env.VERCEL_ENV);
+function SignInButton({ provider }: { provider: CommonProviderOptions }) {
   return (
     <form>
       <Button
