@@ -19,10 +19,10 @@ async function NavBar() {
             await signIn();
           }}
         >
-          {!session ? (
-            <Button type="submit">Sign In</Button>
-          ) : (
+          {session && session.user ? (
             <UserBtn session={session} />
+          ) : (
+            <Button type="submit">Sign In</Button>
           )}
         </form>
       </div>
