@@ -2,7 +2,7 @@ import SignInButton from '@/components/SignInButton';
 
 async function LoginPage() {
   const res = await fetch(
-    `${
+    `https://${
       process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'
     }/api/auth/providers`
   );
