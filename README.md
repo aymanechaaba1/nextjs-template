@@ -13,4 +13,20 @@
 - Prisma ORM
 - Deployment: Vercel
 
+```ts
+import { auth } from '@/lib/auth';
+
+const session = await auth();
+```
+
+### User Payload
+
+`{
+name: string;
+email: string;
+image: string;
+id: string;
+access_token: string;
+}`
+
 Happy Coding 😎
