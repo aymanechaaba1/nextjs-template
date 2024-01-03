@@ -1,9 +1,5 @@
 import SignInButton from '@/components/SignInButton';
-
-export const getFetchUrl = () =>
-  process.env.VERCEL_ENV === 'development'
-    ? 'http://localhost:3000'
-    : `https://${process.env.VERCEL_URL}`;
+import { getFetchUrl } from '@/lib/utils';
 
 async function LoginPage() {
   const res = await fetch(`${getFetchUrl()}/api/auth/providers`);
