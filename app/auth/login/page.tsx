@@ -8,8 +8,6 @@ async function LoginPage() {
 
   const providers: Provider[] = await res.json();
 
-  console.log(providers);
-
   return (
     <div className="grid grid-cols-2 gap-3 mt-5">
       {Object.values(providers).map((provider) => (

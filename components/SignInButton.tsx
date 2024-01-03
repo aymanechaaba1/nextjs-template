@@ -9,6 +9,7 @@ function SignInButton({ provider }: { provider: Provider }) {
           'use server';
           await signIn(provider.id, {
             callbackUrl: provider.callbackUrl,
+            redirectTo: '/',
           });
         }}
         key={provider.id}
