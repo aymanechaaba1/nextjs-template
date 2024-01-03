@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { signIn } from '@/lib/auth';
 
 function SignInButton({ provider }: { provider: Provider }) {
+  console.log(process.env.VERCEL_ENV);
   return (
     <form>
       <Button
