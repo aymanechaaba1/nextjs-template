@@ -1,11 +1,12 @@
 import SignInButton from '@/components/SignInButton';
 
+export const getFetchUrl = () =>
+  process.env.VERCEL_ENV === 'development'
+    ? 'http://localhost:3000'
+    : `https://${process.env.VERCEL_URL}`;
+
 async function LoginPage() {
-  const res = await fetch(
-    `https://${
-      process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'
-    }/api/auth/providers`
-  );
+  const res = await fetch(`${getFetchUrl()}/api/auth/providers`);
 
   if (!res.ok) throw new Error(`Providers Not Found.`);
 

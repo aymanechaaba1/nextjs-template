@@ -1,18 +1,17 @@
-import { signIn } from '@/lib/auth';
+'use client';
+
+import { signIn } from 'next-auth/react';
 import { Button } from './ui/button';
 
 function SignInBtn() {
   return (
-    <form>
-      <Button
-        formAction={async () => {
-          'use server';
-          await signIn();
-        }}
-      >
-        Sign In
-      </Button>
-    </form>
+    <Button
+      onClick={async () => {
+        await signIn();
+      }}
+    >
+      Sign In
+    </Button>
   );
 }
 
