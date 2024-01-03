@@ -1,18 +1,17 @@
 import SignInButton from '@/components/SignInButton';
-import { auth } from '@/lib/auth';
 
 async function LoginPage() {
   const res = await fetch(
-    `${process.env.VERCEL_URL || 'http://localhost:3000'}/api/auth/providers`
+    `${
+      process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'
+    }/api/auth/providers`
   );
 
   if (!res.ok) throw new Error(`Providers Not Found.`);
 
   const providers: Provider[] = await res.json();
 
-  const session = await auth();
-
-  console.log(session);
+  console.log(providers);
 
   return (
     <div className="grid grid-cols-2 gap-3 mt-5">
