@@ -1,3 +1,4 @@
+import { getFetchUrl } from '@/lib/utils';
 import { Button } from './ui/button';
 import { signIn } from '@/lib/auth';
 
@@ -8,7 +9,7 @@ function SignInButton({ provider }: { provider: Provider }) {
         formAction={async () => {
           'use server';
           await signIn(provider.id, {
-            callbackUrl: provider.callbackUrl,
+            callbackUrl: `${getFetchUrl()}/api/auth/callback/${provider.id}`,
             redirectTo: '/',
           });
         }}
