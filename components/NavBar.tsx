@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import UserBtn from './UserBtn';
 import Link from 'next/link';
 import ToggleDarkMode from './ToggleDarkMode';
+import SignInBtn from './SignInBtn';
 
 async function NavBar() {
   const session = await auth();
@@ -13,18 +14,13 @@ async function NavBar() {
       <div>links</div>
       <div className="flex items-center gap-3">
         <ToggleDarkMode />
-        <form
-          action={async () => {
-            'use server';
-            await signIn();
-          }}
-        >
+        <div>
           {session && session.user ? (
             <UserBtn session={session} />
           ) : (
-            <Button type="submit">Sign In</Button>
+            <SignInBtn />
           )}
-        </form>
+        </div>
       </div>
     </div>
   );
