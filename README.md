@@ -1,3 +1,5 @@
+# NextJS NextAuth v5 Starter Kit
+
 1. `npm i`
 2. Setup you .env variables (Check env.example)
 3. `npm run dev`
